@@ -1,0 +1,13 @@
+export const AdvisoryImageUrl = '/image/advisory.png'
+export const ResourcefulImageUrl ='/image/resourceful.png'
+export const PortfolioImageUrl1 ='/image/image1.png'
+export const PortfolioImageUrl2 ='/image/image2.png'
+export const PortfolioImageUrl3 ='/image/image3.png'
+export const USPImageUrl ='/image/usp.png'
+export const IndustriesImageUrl1 ='/icons/Icons1.png'
+export const IndustriesImageUrl2 ='/icons/Icons2.png'
+export const IndustriesImageUrl3 ='/icons/Icons3.png'
+export const IndustriesImageUrl4 ='/icons/Icons4.png'
+export const IndustriesImageUrl5 ='/icons/Icons5.png'
+export const IndustriesImageUrl6 ='/icons/Icons6.png'
+
