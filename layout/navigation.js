@@ -1,325 +1,579 @@
-// import { useState } from "react";
-// import classNames from "classnames";
-// import { FcMenu } from "react-icons/fc";
-// import { IoMdClose } from "react-icons/io";
-
-// export default function Header() {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   return (
-//     <div className="shadow-md w-full fixed top-0 left-0 z-50 py-4">
-//       <div className="grid grid-cols-1 md:grid-cols-2">
-//         <div className="logo flex items-center justify-start mobile:mx-14">
-//           <a
-//             href=""
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//           <img
-//             src="/1.png"
-//             alt="Logo"
-//             style={{ width: "70px", height: "50px" }}
-//           />
-//           </a>
-//         </div>
-
-//         {/* Menu Button for Mobile Screens */}
-//         <button
-//           className="block md:hidden text-black font-serif p-2 absolute left-1/2 transform -translate-x-1/2"
-//           onClick={() => setIsMenuOpen(!isMenuOpen)}
-//         >
-//           <div className=" mobile:ml-60 mobileM:ml-72 mobileL:ml-[340px]">
-//             {isMenuOpen ? (
-//               <IoMdClose className="h-10 w-10 text-black" />
-//             ) : (
-//               <FcMenu className="h-10 w-10" />
-//             )}
-//           </div>
-//         </button>
-
-//         <div className="hidden md:flex items-center justify-end md:mx-6 xl:mx-14 laptopL:mx-20 gap-5">
-//           <div className="text-white font-sans cursor-pointer group">
-//             <a href="">Home</a>
-//             <span className="block inset-x-0 bottom-0 h-0.5 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-//           </div>
-//           <div className="text-white font-sans cursor-pointer group">
-//             <a href="">About Us</a>
-//             <span className="block inset-x-0 bottom-0 h-0.5 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-//           </div>
-//           <div className="text-white font-sans cursor-pointer group">
-//             <a href="">Services</a>
-//             <span className="block inset-x-0 bottom-0 h-0.5 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-//           </div>
-//           <div className="text-white font-sans cursor-pointer group">
-//             <a href="https://headsupcorporation.com/connect-with-us">
-//               Testimonials
-//             </a>
-//             <span className="block inset-x-0 bottom-0 h-0.5 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-//           </div>
-//           <div className="text-white font-sans cursor-pointer group">
-//             <a href="https://headsupcorporation.com/connect-with-us">Contact</a>
-//             <span className="block inset-x-0 bottom-0 h-0.5 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Dropdown Menu for Mobile Screens */}
-//       <div
-//         className={classNames("lg:hidden", {
-//           block: isMenuOpen,
-//           hidden: !isMenuOpen,
-//         })}
-//       >
-//         <div className="flex flex-col items-center space-y-4 bg-pink-100 shadow-md py-4 px-6">
-//           {[
-//             {
-//               href: "",
-//               label: "Home",
-//             },
-//             {
-//               href: "",
-//               label: "About Us",
-//             },
-//             {
-//               href: "",
-//               label: "Services",
-//             },
-//             {
-//               href: "",
-//               label: "Testimonial",
-//             },
-//             {
-//               href: "",
-//               label: "Contact",
-//             },
-//           ].map(({ href, label, }) => (
-//             <div key={href} className="relative group">
-//               <a
-//                 href={href}
-//                 className="font-sans text-black"
-//               >
-//                 {label}
-//               </a>
-//               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// 'use client'
-
-// import { useState, useEffect } from 'react'
-
-// export default function Navigation({ onOpenModal, scrollToSection }) {
-//   const [isScrolled, setIsScrolled] = useState(false)
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 100)
-//     }
-
-//     window.addEventListener('scroll', handleScroll)
-//     return () => window.removeEventListener('scroll', handleScroll)
-//   }, [])
-
-//   return (
-//     <nav className={`relative z-50 bg-white/80 backdrop-blur-md shadow-sm sticky top-0 transition-all duration-300 ${
-//       isScrolled ? 'shadow-lg' : ''
-//     }`}>
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center py-4">
-//           <div className="flex items-center space-x-2">
-//             <div className="w-10 h-10 bg-gradient-to-r from-pink-300 to-yellow-300 rounded-full flex items-center justify-center">
-//               <span className="text-white font-bold text-lg">D</span>
-//             </div>
-//             <span className="text-2xl font-bold gradient-text">Digitals by Dee</span>
-//           </div>
-
-//           <div className="hidden md:flex space-x-8">
-//             <button
-//               onClick={() => scrollToSection('home')}
-//               className="text-gray-700 hover:text-pink-400 transition-colors"
-//             >
-//               Home
-//             </button>
-//             <button
-//               onClick={() => scrollToSection('about')}
-//               className="text-gray-700 hover:text-pink-400 transition-colors"
-//             >
-//               About
-//             </button>
-//             <button
-//               onClick={() => scrollToSection('services')}
-//               className="text-gray-700 hover:text-pink-400 transition-colors"
-//             >
-//               Services
-//             </button>
-//             <button
-//               onClick={() => scrollToSection('testimonials')}
-//               className="text-gray-700 hover:text-pink-400 transition-colors"
-//             >
-//               Testimonials
-//             </button>
-//             <button
-//               onClick={onOpenModal}
-//               className="btn-primary text-white px-6 py-2 rounded-full font-medium"
-//             >
-//               Let's Talk
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   )
-// }
-
-"use client";
-
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Phone, Menu, X, TextAlignEnd } from "lucide-react";
 import Image from "next/image";
-import { HiOutlineMenu } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
 
-export default function Navigation({ onOpenModal, scrollToSection }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
+  // Scroll to section smoothly
+  // const scrollToSection = (id) => {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //     setIsMenuOpen(false);
+  //   }
+  // };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleMobileNavClick = (sectionId) => {
-    scrollToSection(sectionId);
-    setIsMobileMenuOpen(false); // Close menu after clicking
-  };
-
-  const handleMobileModalOpen = () => {
-    onOpenModal();
-    setIsMobileMenuOpen(false); // Close menu after clicking
-  };
+  const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    setIsMenuOpen(false);
+    setTimeout(() => {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
+  }
+};
 
   return (
-    <nav
-      className={`relative z-50 bg-white/80 backdrop-blur-md shadow-sm sticky top-0 transition-all duration-300 ${
-        isScrolled ? "shadow-lg" : ""
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="relative">
+    <div className="bg-white text-gray-900">
+      {/* Navigation */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="fixed w-full bg-[#0885A6] backdrop-blur-sm z-50 shadow-lg"
+      >
+        <div className="px-4 md:px-8 lg:px-12 xl:px-24 4k:px-28">
+          <div className="flex justify-between items-center h-20 relative z-[100]">
+            {/* Logo */}
+            <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
               <Image
                 src="/1.png"
                 alt="Digitals by Dee Logo"
                 width={180}
                 height={60}
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain rounded-lg"
                 priority
               />
+            </motion.div>
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {["HOME", "ABOUT US", "SERVICES", "TESTIMONIALS"].map((item) => (
+                <button
+                  key={item}
+                  onClick={() =>
+                    scrollToSection(item.toLowerCase().replace(" ", "-"))
+                  }
+                  className="text-white hover:text-[#800000] transition font-medium tracking-wide"
+                >
+                  {item}
+                </button>
+              ))}
+
+              <a
+                href="tel:+918383946401"
+                className="flex items-center gap-2 bg-white text-[#0885A6] hover:text-[#800000] px-4 py-2 rounded-lg shadow-md hover:bg-gray-100 transition"
+              >
+                <Phone className="w-5 h-5" />
+                <span className="font-medium tracking-wide">
+                  +91 8383946401
+                </span>
+              </a>
             </div>
-          </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+            {/* Mobile Menu Button */}
             <button
-              onClick={() => scrollToSection("home")}
-              className="text-gray-700 hover:text-pink-400 transition-colors"
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation menu"
+              className="lg:hidden text-white hover:text-[#800000] transition z-[110]"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-gray-700 hover:text-pink-400 transition-colors"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-pink-400 transition-colors"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("testimonials")}
-              className="text-gray-700 hover:text-pink-400 transition-colors"
-            >
-              Testimonials
-            </button>
-            <button
-              onClick={onOpenModal}
-              className="btn-primary text-white px-6 py-2 rounded-full font-medium"
-            >
-              Let's Talk
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMobileMenu}
-              className="text-gray-700 hover:text-pink-400 focus:outline-none focus:text-pink-400 transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? (
-                <IoMdClose className="h-7 w-7" />
+              {isMenuOpen ? (
+                <X size={32} strokeWidth={2.5} />
               ) : (
-                <HiOutlineMenu className="h-8 w-8" />
+                <TextAlignEnd size={32} />
               )}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white/100 backdrop-blur-md shadow-lg border-t border-gray-100">
-          <div className="px-4 py-6 space-y-4">
-            <button
-              onClick={() => handleMobileNavClick("home")}
-              className="block w-full text-center text-gray-700 hover:text-pink-400 transition-colors py-2 text-lg"
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden overflow-visible bg-blue-50 absolute top-full left-0 right-0 z-[105] shadow-2xl"
+              style={{ pointerEvents: "auto" }}
             >
-              Home
-            </button>
-            <button
-              onClick={() => handleMobileNavClick("about")}
-              className="block w-full text-center text-gray-700 hover:text-pink-400 transition-colors py-2 text-lg"
-            >
-              About
-            </button>
-            <button
-              onClick={() => handleMobileNavClick("services")}
-              className="block w-full text-center text-gray-700 hover:text-pink-400 transition-colors py-2 text-lg"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => handleMobileNavClick("testimonials")}
-              className="block w-full text-center text-gray-700 hover:text-pink-400 transition-colors py-2 text-lg"
-            >
-              Testimonials
-            </button>
-            <button
-              onClick={handleMobileModalOpen}
-              className="block w-full btn-primary text-white px-6 py-3 rounded-full font-medium text-center mt-4"
-            >
-              Let's Talk
-            </button>
-          </div>
-        </div>
-      )}
-    </nav>
+              <div className="px-4 py-6 space-y-1">
+                {["HOME", "ABOUT US", "SERVICES", "TESTIMONIALS"].map(
+                  (item, index) => (
+                    <motion.button
+                      key={item}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + index * 0.05 }}
+                      onClick={() =>
+                        scrollToSection(item.toLowerCase().replace(" ", "-"))
+                      }
+                      className="w-full text-center text-[#0885A6] hover:text-[#800000] hover:bg-white transition py-4 text-xl font-bold tracking-wide rounded-lg cursor-pointer relative z-[106]"
+                      style={{ pointerEvents: "auto" }}
+                    >
+                      {item}
+                    </motion.button>
+                  )
+                )}
+                <a
+                  href="tel:+918383946401"
+                  className="flex items-center justify-center gap-2 bg-white text-[#0885A6] hover:text-[#800000] px-4 py-4 rounded-lg shadow-md hover:bg-gray-100 transition mt-4 relative z-[106] cursor-pointer"
+                  style={{ pointerEvents: "auto" }}
+                >
+                  <Phone className="w-5 h-5" />
+                  <span className="font-medium tracking-wide text-lg">
+                    +91 8383946401
+                  </span>
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </div>
   );
 }
+
+export default Navigation;
+
+
+
+
+// import React, { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { Phone, Menu, X, TextAlignEnd } from "lucide-react";
+// import Image from "next/image";
+
+// function Navigation() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   // Scroll to section smoothly
+//   const scrollToSection = (id) => {
+//     const section = document.getElementById(id);
+//     if (section) {
+//       section.scrollIntoView({ behavior: "smooth" });
+//       setIsMenuOpen(false);
+//     }
+//   };
+
+//   return (
+//     <div className="bg-white text-gray-900">
+//       {/* Navigation */}
+//       <motion.nav
+//         initial={{ y: -100 }}
+//         animate={{ y: 0 }}
+//         className="fixed w-full bg-[#0885A6] backdrop-blur-sm z-50 shadow-lg"
+//       >
+//         <div className="px-4 md:px-8 lg:px-12 xl:px-24 4k:px-28">
+//           <div className="flex justify-between items-center h-20 relative z-[100]">
+//             {/* Logo */}
+//             <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
+//               <Image
+//                 src="/1.png"
+//                 alt="Digitals by Dee Logo"
+//                 width={180}
+//                 height={60}
+//                 className="h-16 w-auto object-contain rounded-lg"
+//                 priority
+//               />
+//             </motion.div>
+
+//             {/* Desktop Menu */}
+//             <div className="hidden lg:flex items-center space-x-8">
+//               {["HOME", "ABOUT US", "SERVICES", "TESTIMONIALS"].map((item) => (
+//                 <button
+//                   key={item}
+//                   onClick={() =>
+//                     scrollToSection(item.toLowerCase().replace(" ", "-"))
+//                   }
+//                   className="text-white hover:text-[#800000] transition font-medium tracking-wide"
+//                 >
+//                   {item}
+//                 </button>
+//               ))}
+
+//               <a
+//                 href="tel:+918383946401"
+//                 className="flex items-center gap-2 bg-white text-[#0885A6] hover:text-[#800000] px-4 py-2 rounded-lg shadow-md hover:bg-gray-100 transition"
+//               >
+//                 <Phone className="w-5 h-5" />
+//                 <span className="font-medium tracking-wide">
+//                   +91 8383946401
+//                 </span>
+//               </a>
+//             </div>
+
+//             {/* Mobile Menu Button */}
+//             <button
+//               aria-expanded={isMenuOpen}
+//               aria-label="Toggle navigation menu"
+//               className="lg:hidden text-white hover:text-[#800000] transition"
+//               onClick={() => setIsMenuOpen(!isMenuOpen)}
+//             >
+//               {isMenuOpen ? (
+//                 <X size={32} strokeWidth={2.5} />
+//               ) : (
+//                 <TextAlignEnd size={32} />
+//               )}
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* Mobile Menu Dropdown */}
+//         <AnimatePresence>
+//           {isMenuOpen && (
+//             <motion.div
+//               initial={{ height: 0, opacity: 0 }}
+//               animate={{ height: "auto", opacity: 1 }}
+//               exit={{ height: 0, opacity: 0 }}
+//               transition={{ duration: 0.3 }}
+//               className="lg:hidden overflow-visible bg-blue-50 relative z-[100]"
+//             >
+//               <div className="px-4 py-6 space-y-1">
+//                 {["HOME", "ABOUT US", "SERVICES", "TESTIMONIALS"].map(
+//                   (item, index) => (
+//                     <motion.button
+//                       key={item}
+//                       initial={{ opacity: 0, x: -20 }}
+//                       animate={{ opacity: 1, x: 0 }}
+//                       transition={{ delay: 0.1 + index * 0.05 }}
+//                       onClick={() =>
+//                         scrollToSection(item.toLowerCase().replace(" ", "-"))
+//                       }
+//                       className="w-full text-center text-[#0885A6] hover:text-[#800000] hover:bg-white transition py-4 text-xl font-bold tracking-wide rounded-lg"
+//                     >
+//                       {item}
+//                     </motion.button>
+//                   )
+//                 )}
+//                 <a
+//                   href="tel:+918383946401"
+//                   className="flex items-center justify-center gap-2 bg-white text-[#0885A6] hover:text-[#800000] px-4 py-4 rounded-lg shadow-md hover:bg-gray-100 transition mt-4"
+//                 >
+//                   <Phone className="w-5 h-5" />
+//                   <span className="font-medium tracking-wide text-lg">
+//                     +91 8383946401
+//                   </span>
+//                 </a>
+//               </div>
+//             </motion.div>
+//           )}
+//         </AnimatePresence>
+//       </motion.nav>
+//     </div>
+//   );
+// }
+
+// export default Navigation;
+
+// import React, { useState, useEffect } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { Phone, TextAlignEnd, X } from "lucide-react";
+// import Image from "next/image";
+
+// function Navigation() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   // ✅ Scroll to section smoothly
+//   const scrollToSection = (id) => {
+//     const section = document.getElementById(id);
+//     if (section) {
+//       section.scrollIntoView({ behavior: "smooth" });
+//       setIsMenuOpen(false);
+//     }
+//   };
+
+//   // ✅ Lock body scroll when mobile menu is open
+//   useEffect(() => {
+//     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+//   }, [isMenuOpen]);
+
+//   return (
+//     <div className="bg-white text-gray-900">
+//       {/* Navigation */}
+//       <motion.nav
+//         initial={{ y: -100 }}
+//         animate={{ y: 0 }}
+//         className="fixed w-full bg-[#0885A6] backdrop-blur-sm z-50 shadow-lg"
+//       >
+//         <div className="px-4 sm:px-6 lg:px-8 xl:px-24">
+//           <div className="flex justify-between items-center h-20">
+//             {/* Logo */}
+//             <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
+//               <Image
+//                 src="/1.png"
+//                 alt="Digitals by Dee Logo"
+//                 width={180}
+//                 height={60}
+//                 className="h-16 w-auto object-contain rounded-lg"
+//                 priority
+//               />
+//             </motion.div>
+
+//             {/* Desktop Menu */}
+//             <div className="hidden md:flex items-center space-x-8">
+//               {["HOME", "ABOUT US", "SERVICES", "TESTIMONIALS"].map((item) => (
+//                 <button
+//                   key={item}
+//                   onClick={() =>
+//                     scrollToSection(item.toLowerCase().replace(" ", "-"))
+//                   }
+//                   className="text-white hover:text-[#800000] transition font-medium tracking-wide"
+//                 >
+//                   {item}
+//                 </button>
+//               ))}
+
+//               <a
+//                 href="tel:+9183839464011"
+//                 className="flex items-center gap-2 bg-white text-[#0885A6] hover:text-[#800000] px-4 py-2 rounded-lg shadow-md hover:bg-gray-100 transition"
+//               >
+//                 <Phone className="w-5 h-5" />
+//                 <span className="font-medium tracking-wide">
+//                   +91 8383946401
+//                 </span>
+//               </a>
+//             </div>
+
+//             {/* Mobile Menu Button */}
+//             <button
+//               aria-expanded={isMenuOpen}
+//               aria-label="Toggle navigation menu"
+//               className="md:hidden text-yellow-400"
+//               onClick={() => setIsMenuOpen(!isMenuOpen)}
+//             >
+//               {isMenuOpen ? <X size={28} /> : <TextAlignEnd size={28} />}
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* Mobile Menu Overlay */}
+//         <AnimatePresence>
+//           {isMenuOpen && (
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               exit={{ opacity: 0 }}
+//               className="md:hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"
+//               onClick={() => setIsMenuOpen(false)}
+//             />
+//           )}
+//         </AnimatePresence>
+
+//         {/* Mobile Menu */}
+//         <AnimatePresence>
+//           {isMenuOpen && (
+//             <motion.div
+//               initial={{ opacity: 0, scale: 0.95 }}
+//               animate={{ opacity: 1, scale: 1 }}
+//               exit={{ opacity: 0, scale: 0.95 }}
+//               transition={{ duration: 0.2 }}
+//               className="md:hidden fixed inset-0 z-50 flex items-center justify-center p-4 mt-10"
+//             >
+//               <div className="w-full max-w-md">
+//                 {/* Header */}
+//                 <div className="flex justify-between items-center mb-4 px-2">
+//                   <button
+//                     onClick={() => setIsMenuOpen(false)}
+//                     className="text-white hover:text-[#800000] transition"
+//                   >
+//                     <X size={36} strokeWidth={2.5} />
+//                   </button>
+//                 </div>
+
+//                 {/* Menu Items */}
+//                 <motion.div
+//                   initial={{ y: 20, opacity: 0 }}
+//                   animate={{ y: 0, opacity: 1 }}
+//                   transition={{ delay: 0.1 }}
+//                   className="bg-gradient-to-br from-[#0885A6] via-blue-[#0885A6] to-gray-[#0885A6] backdrop-blur-md rounded-3xl p-8 shadow-2xl mt-[400px]"
+//                 >
+//                   <div className="flex flex-col space-y-6">
+//                     {["HOME", "ABOUT US", "SERVICES", "TESTIMONIALS"].map(
+//                       (item, index) => (
+//                         <motion.button
+//                           key={item}
+//                           initial={{ opacity: 0, x: -20 }}
+//                           animate={{ opacity: 1, x: 0 }}
+//                           transition={{ delay: 0.1 + index * 0.05 }}
+//                           onClick={() =>
+//                             scrollToSection(
+//                               item.toLowerCase().replace(" ", "-")
+//                             )
+//                           }
+//                           className="text-center text-white hover:text-[#800000] transition py-3 text-2xl font-bold tracking-wide"
+//                         >
+//                           {item}
+//                         </motion.button>
+//                       )
+//                     )}
+//                     <a
+//                       href="tel:+9183839464011"
+//                       className="flex items-center gap-2 bg-white text-[#0885A6] hover:text-[#800000] px-4 py-2 rounded-lg shadow-md hover:bg-gray-100 transition"
+//                     >
+//                       <Phone className="w-5 h-5" />
+//                       <span className="font-medium tracking-wide">
+//                         +91 8383946401
+//                       </span>
+//                     </a>
+//                   </div>
+//                 </motion.div>
+//               </div>
+//             </motion.div>
+//           )}
+//         </AnimatePresence>
+//       </motion.nav>
+//     </div>
+//   );
+// }
+
+// export default Navigation;
+
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import Image from "next/image";
+// import { HiOutlineMenu } from "react-icons/hi";
+// import { IoMdClose } from "react-icons/io";
+
+// export default function Navigation({ onOpenModal, scrollToSection }) {
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setIsScrolled(window.scrollY > 80); // scroll detection
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+//   const handleMobileNavClick = (sectionId) => {
+//     scrollToSection(sectionId);
+//     setIsMobileMenuOpen(false);
+//   };
+
+//   const handleMobileModalOpen = () => {
+//     onOpenModal();
+//     setIsMobileMenuOpen(false);
+//   };
+
+//   return (
+//     <nav
+//       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+//         isScrolled
+//           ? "bg-white/100 backdrop-blur-md shadow-lg"
+//           : "bg-transparent"
+//       }`}
+//     >
+//       <div className="px-5 md:px-7 lg:px-9 xl:px-10 4k:px-14">
+//         <div className="flex justify-between items-center py-3">
+//           {/* Logo */}
+//           <div className="flex items-center space-x-2">
+//             <div className="relative">
+//               <Image
+//                 src="/1.png"
+//                 alt="Digitals by Dee Logo"
+//                 width={180}
+//                 height={60}
+//                 className="h-16 w-auto object-contain"
+//                 priority
+//               />
+//             </div>
+//           </div>
+
+//           {/* Desktop Menu */}
+//           <div className="hidden md:flex space-x-8">
+//             <button
+//               onClick={() => scrollToSection("home")}
+//               className="text-gray-800 hover:text-[#800000] transition-colors font-medium"
+//             >
+//               Home
+//             </button>
+//             <button
+//               onClick={() => scrollToSection("about")}
+//               className="text-gray-800 hover:text-[#800000] transition-colors font-medium"
+//             >
+//               About
+//             </button>
+//             <button
+//               onClick={() => scrollToSection("services")}
+//               className="text-gray-800 hover:text-[#800000] transition-colors font-medium"
+//             >
+//               Services
+//             </button>
+//             <button
+//               onClick={() => scrollToSection("testimonials")}
+//               className="text-gray-800 hover:text-[#800000] transition-colors font-medium"
+//             >
+//               Testimonials
+//             </button>
+//             <button
+//               onClick={onOpenModal}
+//               className="bg-white border-2 border-[#800000] hover:border-2 hover:border-[#800000] px-6 py-2 rounded-full font-medium hover:bg-[#800000] hover:text-white transition-all shadow-md hover:shadow-lg"
+//             >
+//               Let's Talk
+//             </button>
+//           </div>
+
+//           {/* Mobile Menu Button */}
+//           <div className="md:hidden">
+//             <button
+//               onClick={toggleMobileMenu}
+//               className="text-gray-800 hover:text-yellow-500 focus:outline-none transition-colors"
+//               aria-label="Toggle mobile menu"
+//             >
+//               {isMobileMenuOpen ? (
+//                 <IoMdClose className="h-7 w-7" />
+//               ) : (
+//                 <HiOutlineMenu className="h-8 w-8" />
+//               )}
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Menu Dropdown */}
+//       {isMobileMenuOpen && (
+//         <div className="md:hidden absolute top-full left-0 right-0 bg-white/100 backdrop-blur-md shadow-lg border-t border-gray-100">
+//           <div className="px-4 py-6 space-y-4 bg-blue-50">
+//             <button
+//               onClick={() => handleMobileNavClick("home")}
+//               className="block w-full text-center text-gray-800 hover:text-[#800000] transition-colors py-2 text-lg font-medium"
+//             >
+//               Home
+//             </button>
+//             <button
+//               onClick={() => handleMobileNavClick("about")}
+//               className="block w-full text-center text-gray-800 hover:text-[#800000] transition-colors py-2 text-lg font-medium"
+//             >
+//               About
+//             </button>
+//             <button
+//               onClick={() => handleMobileNavClick("services")}
+//               className="block w-full text-center text-gray-800 hover:text-[#800000] transition-colors py-2 text-lg font-medium"
+//             >
+//               Services
+//             </button>
+//             <button
+//               onClick={() => handleMobileNavClick("testimonials")}
+//               className="block w-full text-center text-gray-800 hover:text-[#800000] transition-colors py-2 text-lg font-medium"
+//             >
+//               Testimonials
+//             </button>
+//             <button
+//               onClick={handleMobileModalOpen}
+//               className="block w-full bg-gradient-to-r from-[#0885A6] to-white text-white px-6 py-3 rounded-full font-medium text-center mt-4 hover:bg-[#0885A6] hover:text-[#800000] transition-all shadow-md"
+//             >
+//               Let's Talk
+//             </button>
+//           </div>
+//         </div>
+//       )}
+//     </nav>
+//   );
+// }
