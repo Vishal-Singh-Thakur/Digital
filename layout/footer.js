@@ -332,198 +332,384 @@
 //   );
 // }
 
+// "use client";
+
+// import Image from "next/image";
+
+// export default function Footer({ scrollToSection }) {
+//   return (
+//     <footer className="bg-gray-900 text-white py-8 px-7 lg:px-8 xl:px-12 4k:px-14">
+//       <div className="">
+//         <div className="grid md:grid-cols-3 gap-8 mb-4">
+//           <div>
+//             <div className="flex items-center space-x-2 mb-4">
+//               <div className="flex items-center space-x-2">
+//                 <div className="relative">
+//                   <Image
+//                     src="/1.png"
+//                     alt="Digitals by Dee Logo"
+//                     width={300}
+//                     height={100}
+//                     className="h-24 w-auto object-contain"
+//                     priority
+//                   />
+//                 </div>
+//               </div>
+//             </div>
+//             <p className="text-gray-400 mb-4">Your growth, our passion.</p>
+//           </div>
+
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+//             <div className="space-y-2">
+//               <button
+//                 onClick={() => scrollToSection("home")}
+//                 className="text-gray-400 hover:text-[#800000] transition-colors block"
+//               >
+//                 Home
+//               </button>
+//               <button
+//                 onClick={() => scrollToSection("about")}
+//                 className="text-gray-400 hover:text-[#800000] transition-colors block"
+//               >
+//                 About
+//               </button>
+//               <button
+//                 onClick={() => scrollToSection("services")}
+//                 className="text-gray-400 hover:text-[#800000] transition-colors block"
+//               >
+//                 Services
+//               </button>
+//               <button
+//                 onClick={() => scrollToSection("testimonials")}
+//                 className="text-gray-400 hover:text-[#800000] transition-colors block"
+//               >
+//                 Testimonials
+//               </button>
+//             </div>
+//           </div>
+
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
+//             <div className="space-y-2 text-gray-400">
+//               <a
+//                 href="mailto:digitalsbydeeksha@gmail.com"
+//                 className="text-blue-400 hover:underline block"
+//               >
+//                 📩 digitalsbydeeksha@gmail.com
+//               </a>
+
+//               <a
+//                 href="tel:+918383946401"
+//                 className="text-gray-400 hover:text-white transition-colors block"
+//               >
+//                 📞 +91-8383946401
+//               </a>
+//               <div className="mt-4">
+//                 <p className="text-md mt-2">Follow us</p>
+//                 <div className="flex items-center space-x-4">
+//                   <a
+//                     href="https://www.instagram.com/digitalsbydeee?igsh=Mm1menFpc2xsZGlo&utm_source=qr"
+//                     className="text-2xl hover:text-pink-400 transition-colors"
+//                     title="Instagram"
+//                     aria-label="Instagram"
+//                   >
+//                     {" "}
+//                     <svg
+//                       xmlns="http://www.w3.org/2000/svg"
+//                       width="23"
+//                       height="23"
+//                       viewBox="0 0 102 102"
+//                       id="instagram"
+//                       className="group-hover:scale-150 transition-transform duration-300 ease-in-out"
+//                     >
+//                       <defs>
+//                         <radialGradient
+//                           id="a"
+//                           cx="6.601"
+//                           cy="99.766"
+//                           r="129.502"
+//                           gradientUnits="userSpaceOnUse"
+//                         >
+//                           <stop offset=".09" stopColor="#fa8f21"></stop>
+//                           <stop offset=".78" stopColor="#d82d7e"></stop>
+//                         </radialGradient>
+//                         <radialGradient
+//                           id="b"
+//                           cx="70.652"
+//                           cy="96.49"
+//                           r="113.963"
+//                           gradientUnits="userSpaceOnUse"
+//                         >
+//                           <stop
+//                             offset=".64"
+//                             stopColor="#8c3aaa"
+//                             stopOpacity="0"
+//                           ></stop>
+//                           <stop offset="1" stopColor="#8c3aaa"></stop>
+//                         </radialGradient>
+//                       </defs>
+//                       <path
+//                         fill="url(#a)"
+//                         d="M25.865,101.639A34.341,34.341,0,0,1,14.312,99.5a19.329,19.329,0,0,1-7.154-4.653A19.181,19.181,0,0,1,2.5,87.694,34.341,34.341,0,0,1,.364,76.142C.061,69.584,0,67.617,0,51s.067-18.577.361-25.14A34.534,34.534,0,0,1,2.5,14.31a19.179,19.179,0,0,1,4.654-7.155A19.18,19.18,0,0,1,14.311,2.5,34.341,34.341,0,0,1,25.865.361C32.423.058,34.389,0,51,0s18.578.058,25.14.361A34.523,34.523,0,0,1,87.694,2.5a19.167,19.167,0,0,1,7.155,4.654,19.168,19.168,0,0,1,4.653,7.155,34.341,34.341,0,0,1,2.136,11.552C101.939,32.423,102,34.389,102,51s-.061,18.578-.364,25.141A34.53,34.53,0,0,1,99.5,87.694a19.167,19.167,0,0,1-4.653,7.155,19.327,19.327,0,0,1-7.155,4.653,34.341,34.341,0,0,1-11.552,2.139C69.577,101.939,67.611,102,51,102S32.423,101.939,25.865,101.639Z"
+//                       ></path>
+//                       <path
+//                         fill="url(#b)"
+//                         d="M25.865,101.639A34.341,34.341,0,0,1,14.312,99.5a19.329,19.329,0,0,1-7.154-4.653A19.181,19.181,0,0,1,2.5,87.694,34.341,34.341,0,0,1,.364,76.142C.061,69.584,0,67.617,0,51s.067-18.577.361-25.14A34.534,34.534,0,0,1,2.5,14.31a19.179,19.179,0,0,1,4.654-7.155A19.18,19.18,0,0,1,14.311,2.5,34.341,34.341,0,0,1,25.865.361C32.423.058,34.389,0,51,0s18.578.058,25.14.361A34.523,34.523,0,0,1,87.694,2.5a19.167,19.167,0,0,1,7.155,4.654,19.168,19.168,0,0,1,4.653,7.155,34.341,34.341,0,0,1,2.136,11.552C101.939,32.423,102,34.389,102,51s-.061,18.578-.364,25.141A34.53,34.53,0,0,1,99.5,87.694a19.167,19.167,0,0,1-4.653,7.155,19.327,19.327,0,0,1-7.155,4.653,34.341,34.341,0,0,1-11.552,2.139C69.577,101.939,67.611,102,51,102S32.423,101.939,25.865,101.639Z"
+//                       ></path>
+//                       <path
+//                         fill="#fff"
+//                         d="M51,24.756A26.244,26.244,0,1,0,77.244,51,26.244,26.244,0,0,0,51,24.756ZM51,68.8A17.8,17.8,0,1,1,68.8,51,17.8,17.8,0,0,1,51,68.8Zm16.827-40.1a6.123,6.123,0,1,0,6.123,6.123A6.123,6.123,0,0,0,67.827,28.7Z"
+//                       ></path>
+//                     </svg>
+//                   </a>
+//                   <a
+//                     href="https://www.linkedin.com/company/digitals-by-dee/"
+//                     className="text-2xl hover:text-blue-600 transition-colors"
+//                     title="LinkedIn"
+//                     aria-label="LinkedIn"
+//                   >
+//                     <svg
+//                       xmlns="http://www.w3.org/2000/svg"
+//                       width="30"
+//                       height="30"
+//                       viewBox="0 0 48 48"
+//                     >
+//                       <path
+//                         fill="#0078d4"
+//                         d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+//                       ></path>
+//                       <path
+//                         fill="#fff"
+//                         d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19c3.578,0,6.261,2.906,6.261,7.774L36,36z"
+//                       ></path>
+//                     </svg>
+//                   </a>
+//                   <a
+//                     href="https://youtube.com/@digitalsbydee?si=NfEGcu68FqA1l4Ht"
+//                     className="text-2xl hover:text-blue-600 transition-colors"
+//                     title="youtube"
+//                     aria-label="youtube"
+//                   >
+//                     <svg
+//                       xmlns="http://www.w3.org/2000/svg"
+//                       viewBox="0 0 24 24"
+//                       fill="currentColor"
+//                       width="48px"
+//                       height="48px"
+//                     >
+//                       <path
+//                         fill="#FF0000"
+//                         d="M21.8,8.001c-0.21-0.827-0.822-1.474-1.601-1.691C18.625,6,12,6,12,6s-6.625,0-8.199,0.309
+//                         c-0.779,0.217-1.391,0.864-1.601,1.691C2,9.586,2,12,2,12s0,2.414,0.2,3.999c0.21,0.827,0.822,1.474,1.601,1.691
+//                         C5.375,18,12,18,12,18s6.625,0,8.199-0.309c0.779-0.217,1.391-0.864,1.601-1.691C22,14.414,22,12,22,12S22,9.586,21.8,8.001z
+//                         M9.991,14.555v-5.11L15.15,12L9.991,14.555z"
+//                       />
+//                     </svg>
+//                   </a>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="border-t border-gray-800 pt-4 text-center text-gray-400">
+//           <p>
+//             &copy; 2025 Digitals by Dee. Made with 💕 for amazing businesses
+//             like yours!
+//           </p>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
+
 "use client";
 
+import React from "react";
 import Image from "next/image";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
 
 export default function Footer({ scrollToSection }) {
+  const quickLinks = [
+    { name: "Home", id: "home" },
+    { name: "About Us", id: "about-us" },
+    { name: "Services", id: "services" },
+    { name: "Testimonials", id: "testimonials" },
+  ];
+
+  const socialLinks = [
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/digitalsbydeee?igsh=Mm1menFpc2xsZGlo&utm_source=qr",
+      icon: <Instagram className="w-5 h-5" />,
+      hoverColor: "hover:bg-pink-600",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/company/digitals-by-dee/",
+      icon: <Linkedin className="w-5 h-5" />,
+      hoverColor: "hover:bg-blue-600",
+    },
+    {
+      name: "YouTube",
+      url: "https://youtube.com/@digitalsbydee?si=NfEGcu68FqA1l4Ht",
+      icon: <Youtube className="w-5 h-5" />,
+      hoverColor: "hover:bg-red-600",
+    },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-4">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              {/* <div className="w-10 h-10 bg-gradient-to-r from-pink-300 to-yellow-300 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">D</span>
-              </div> */}
-              {/* <span className="text-2xl font-bold">Digitals by Dee 🌸</span> */}
-              <div className="flex items-center space-x-2">
-                <div className="relative">
-                  <Image
-                    src="/1.png" // Add your logo image to public folder as logo.png
-                    alt="Digitals by Dee Logo"
-                    width={300}
-                    height={100}
-                    className="h-24 w-auto object-contain"
-                    priority
-                  />
-                </div>
-              </div>
+    <footer className="bg-gray-900 text-white">
+      <div className=" px-6 md:px-8 lg:px-12 xl:px-24 4k:px-28 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <div className="mb-6">
+              <Image
+                src="/1.png"
+                alt="Digitals by Dee Logo"
+                width={200}
+                height={80}
+                className="h-20 w-auto object-contain"
+                priority
+              />
             </div>
-            <p className="text-gray-400 mb-4">Your growth, our passion.</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <div className="space-y-2">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-gray-400 hover:text-pink-400 transition-colors block"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-gray-400 hover:text-pink-400 transition-colors block"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-gray-400 hover:text-pink-400 transition-colors block"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("testimonials")}
-                className="text-gray-400 hover:text-pink-400 transition-colors block"
-              >
-                Testimonials
-              </button>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Your growth, our passion. Transforming brands through innovative
+              digital strategies.
+            </p>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`bg-gray-800 p-3 rounded-lg ${social.hoverColor} transition-all duration-300 transform hover:scale-110`}
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
-            <div className="space-y-2 text-gray-400">
-              <a
-                href="mailto:digitalsbydeeksha@gmail.com"
-                className="text-blue-400 hover:underline block"
-              >
-                📩 digitalsbydeeksha@gmail.com
-              </a>
+            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-gray-400 hover:text-[#0885A6] transition-colors duration-300 flex items-center group"
+                  >
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#0885A6] mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    {link.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <a
-                href="tel:+918383946401"
-                className="text-gray-400 hover:text-white transition-colors block"
-              >
-                📞 +91-8383946401
-              </a>
-              <div className="mt-4">
-                <p className="text-md mt-2">Follow us</p>
-                <div className="flex items-center space-x-4">
-                  <a
-                    href="https://www.instagram.com/digitalsbydeee?igsh=Mm1menFpc2xsZGlo&utm_source=qr"
-                    className="text-2xl hover:text-pink-400 transition-colors"
-                    title="Instagram"
-                    aria-label="Instagram"
-                  >
-                    {" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="23"
-                      viewBox="0 0 102 102"
-                      id="instagram"
-                      className="group-hover:scale-150 transition-transform duration-300 ease-in-out"
-                    >
-                      <defs>
-                        <radialGradient
-                          id="a"
-                          cx="6.601"
-                          cy="99.766"
-                          r="129.502"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop offset=".09" stopColor="#fa8f21"></stop>
-                          <stop offset=".78" stopColor="#d82d7e"></stop>
-                        </radialGradient>
-                        <radialGradient
-                          id="b"
-                          cx="70.652"
-                          cy="96.49"
-                          r="113.963"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop
-                            offset=".64"
-                            stopColor="#8c3aaa"
-                            stopOpacity="0"
-                          ></stop>
-                          <stop offset="1" stopColor="#8c3aaa"></stop>
-                        </radialGradient>
-                      </defs>
-                      <path
-                        fill="url(#a)"
-                        d="M25.865,101.639A34.341,34.341,0,0,1,14.312,99.5a19.329,19.329,0,0,1-7.154-4.653A19.181,19.181,0,0,1,2.5,87.694,34.341,34.341,0,0,1,.364,76.142C.061,69.584,0,67.617,0,51s.067-18.577.361-25.14A34.534,34.534,0,0,1,2.5,14.31a19.179,19.179,0,0,1,4.654-7.155A19.18,19.18,0,0,1,14.311,2.5,34.341,34.341,0,0,1,25.865.361C32.423.058,34.389,0,51,0s18.578.058,25.14.361A34.523,34.523,0,0,1,87.694,2.5a19.167,19.167,0,0,1,7.155,4.654,19.168,19.168,0,0,1,4.653,7.155,34.341,34.341,0,0,1,2.136,11.552C101.939,32.423,102,34.389,102,51s-.061,18.578-.364,25.141A34.53,34.53,0,0,1,99.5,87.694a19.167,19.167,0,0,1-4.653,7.155,19.327,19.327,0,0,1-7.155,4.653,34.341,34.341,0,0,1-11.552,2.139C69.577,101.939,67.611,102,51,102S32.423,101.939,25.865,101.639Z"
-                      ></path>
-                      <path
-                        fill="url(#b)"
-                        d="M25.865,101.639A34.341,34.341,0,0,1,14.312,99.5a19.329,19.329,0,0,1-7.154-4.653A19.181,19.181,0,0,1,2.5,87.694,34.341,34.341,0,0,1,.364,76.142C.061,69.584,0,67.617,0,51s.067-18.577.361-25.14A34.534,34.534,0,0,1,2.5,14.31a19.179,19.179,0,0,1,4.654-7.155A19.18,19.18,0,0,1,14.311,2.5,34.341,34.341,0,0,1,25.865.361C32.423.058,34.389,0,51,0s18.578.058,25.14.361A34.523,34.523,0,0,1,87.694,2.5a19.167,19.167,0,0,1,7.155,4.654,19.168,19.168,0,0,1,4.653,7.155,34.341,34.341,0,0,1,2.136,11.552C101.939,32.423,102,34.389,102,51s-.061,18.578-.364,25.141A34.53,34.53,0,0,1,99.5,87.694a19.167,19.167,0,0,1-4.653,7.155,19.327,19.327,0,0,1-7.155,4.653,34.341,34.341,0,0,1-11.552,2.139C69.577,101.939,67.611,102,51,102S32.423,101.939,25.865,101.639Z"
-                      ></path>
-                      <path
-                        fill="#fff"
-                        d="M51,24.756A26.244,26.244,0,1,0,77.244,51,26.244,26.244,0,0,0,51,24.756ZM51,68.8A17.8,17.8,0,1,1,68.8,51,17.8,17.8,0,0,1,51,68.8Zm16.827-40.1a6.123,6.123,0,1,0,6.123,6.123A6.123,6.123,0,0,0,67.827,28.7Z"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/digitals-by-dee/"
-                    className="text-2xl hover:text-pink-400 transition-colors"
-                    title="LinkedIn"
-                    aria-label="LinkedIn"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="30"
-                      height="30"
-                      viewBox="0 0 48 48"
-                    >
-                      <path
-                        fill="#0078d4"
-                        d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-                      ></path>
-                      <path
-                        fill="#fff"
-                        d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19c3.578,0,6.261,2.906,6.261,7.774L36,36z"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://youtube.com/@digitalsbydee?si=NfEGcu68FqA1l4Ht"
-                    className="text-2xl hover:text-pink-400 transition-colors"
-                    title="youtube"
-                    aria-label="youtube"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      width="48px"
-                      height="48px"
-                    >
-                      <path
-                        fill="#FF0000"
-                        d="M21.8,8.001c-0.21-0.827-0.822-1.474-1.601-1.691C18.625,6,12,6,12,6s-6.625,0-8.199,0.309
-                        c-0.779,0.217-1.391,0.864-1.601,1.691C2,9.586,2,12,2,12s0,2.414,0.2,3.999c0.21,0.827,0.822,1.474,1.601,1.691
-                        C5.375,18,12,18,12,18s6.625,0,8.199-0.309c0.779-0.217,1.391-0.864,1.601-1.691C22,14.414,22,12,22,12S22,9.586,21.8,8.001z
-                        M9.991,14.555v-5.11L15.15,12L9.991,14.555z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">Our Services</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                SEO Optimization
+              </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                Social Media Marketing
+              </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                Content Marketing
+              </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                PPC Advertising
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">Get In Touch</h3>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="mailto:digitalsbydeeksha@gmail.com"
+                  className="flex items-start gap-3 text-gray-400 hover:text-[#0885A6] transition-colors duration-300 group"
+                >
+                  <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="break-all">digitalsbydeeksha@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+918383946401"
+                  className="flex items-center gap-3 text-gray-400 hover:text-[#0885A6] transition-colors duration-300 group"
+                >
+                  <Phone className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <span>+91 8383946401</span>
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-gray-400">
+                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                <span>Delhi, India</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-4 text-center text-gray-400">
-          <p>
-            &copy; 2025 Digitals by Dee. Made with 💕 for amazing businesses
-            like yours!
-          </p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-center md:text-left">
+              &copy; {new Date().getFullYear()} Digitals by Dee. All rights
+              reserved.
+            </p>
+            <div className="flex items-center gap-6 text-gray-400 text-sm">
+              <button className="hover:text-[#0885A6] transition-colors duration-300">
+                Privacy Policy
+              </button>
+              <span className="text-gray-600">|</span>
+              <button className="hover:text-[#0885A6] transition-colors duration-300">
+                Terms of Service
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed bottom-8 right-8 bg-[#0885A6] text-white p-4 rounded-full shadow-lg hover:bg-[#800000] transform hover:scale-110 transition-all duration-300 z-50"
+        aria-label="Scroll to top"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
     </footer>
   );
 }
