@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Share2, FileText, MousePointerClick } from "lucide-react";
+import { Search, Share2, FileText, MousePointerClick, Globe, Users, Camera, Video } from "lucide-react";
 import Image from "next/image";
 import ContactModal from "./ContactModal";
 
@@ -24,7 +24,7 @@ function ServicesSection() {
       title: "Social Media Marketing",
       description:
         "Engage your audience and build brand awareness across all major social media platforms.",
-      image: "/social.png",
+      image: "/social.jpg",
       icon: <Share2 className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
       highlights: [
         "Content Strategy",
@@ -50,7 +50,7 @@ function ServicesSection() {
       title: "PPC Advertising",
       description:
         "Maximize ROI with targeted pay-per-click campaigns that deliver measurable results.",
-      image: "/ppc.png",
+      image: "/hero.jpg",
       icon: (
         <MousePointerClick className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
       ),
@@ -59,6 +59,66 @@ function ServicesSection() {
         "Facebook Ads",
         "Campaign Optimization",
         "ROI Tracking",
+      ],
+    },
+    {
+      title: "Website Design & Development",
+      description:
+        "Build high-performing, visually stunning websites that convert visitors into loyal customers.",
+      image: "/website.jpg",
+      icon: (
+        <Globe className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+      ),
+      highlights: [
+        "UI/UX Design",
+        "E-commerce Setup",
+        "Landing Page Optimization",
+        "Website Maintenance",
+      ],
+    },
+    {
+      title: "Influencer & Celebrity Tie-ups",
+      description:
+        "Amplify your brand voice with authentic collaborations that drive engagement and trust.",
+      image: "/ppc.png",
+      icon: (
+        <Users className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+      ),
+      highlights: [
+        "Influencer Discovery & Curation",
+        "Campaign Strategy",
+        "Talent Management",
+        "ROI Measurement",
+      ],
+    },
+    {
+      title: "Product Photography & Styling",
+      description:
+        "Showcase your products with visuals that sell — creative, crisp, and on-brand every time.",
+      image: "/photo.jpg",
+      icon: (
+        <Camera className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+      ),
+      highlights: [
+        "Concept & Styling",
+        "Studio/Product Shoots",
+        "Creative Direction",
+        "Image Editing & Retouching",
+      ],
+    },
+    {
+      title: "Brand Films & Campaign Shoots",
+      description:
+        "Tell your brand story through cinematic visuals that captivate and convert.",
+      image: "/brand.jpg",
+      icon: (
+        <Video className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+      ),
+      highlights: [
+        "Concept & Script Development",
+        "Shoot Production",
+        "Post-Production & Editing",
+        "Ad Campaign Integration",
       ],
     },
   ];

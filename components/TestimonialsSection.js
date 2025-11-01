@@ -20,8 +20,8 @@ function TestimonialsSection() {
     },
     {
       name: "Anshu K.",
-      role: "Health and Fitness",
-      text: "Finally, a team that gets it! Creative content and results-driven ads equals magic.",
+      role: "Jewellery brand",
+      text: "Before Dee’s team stepped in, our Meta ads weren’t delivering. Within the first month, we started seeing consistent website traffic and quality leads. The targeting and creatives were spot on!",
     },
   ];
 
