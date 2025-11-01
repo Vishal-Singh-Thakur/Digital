@@ -574,7 +574,7 @@ export default function Footer({ scrollToSection }) {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <Image
-                src="/1.png"
+                src="/d1.png"
                 alt="Digitals by Dee Logo"
                 width={200}
                 height={80}

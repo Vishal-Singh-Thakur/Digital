@@ -38,7 +38,7 @@ function Navigation() {
             {/* Logo */}
             <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
               <Image
-                src="/1.png"
+                src="/d1.png"
                 alt="Digitals by Dee Logo"
                 width={180}
                 height={60}
