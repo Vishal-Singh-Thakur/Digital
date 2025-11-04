@@ -310,7 +310,7 @@ export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    phoneNo: "",
     companyName: "",
     message: "",
   });
@@ -332,7 +332,9 @@ export default function ContactModal({ isOpen, onClose }) {
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
@@ -342,12 +344,12 @@ export default function ContactModal({ isOpen, onClose }) {
         setMsg("Something went wrong. Please try again.");
       } else {
         setMsg(
-          `Thank you ${formData.name}! 🌟 Your message has been received. We'll get back to you within 24 hours to discuss how we can help grow your business!`
+          `Thank you ${formData.name}! 🌟 Your message has been received. We'll get back to you soon.`
         );
         setFormData({
           name: "",
           email: "",
-          phone: "",
+          phoneNo: "",
           companyName: "",
           message: "",
         });
@@ -389,7 +391,6 @@ export default function ContactModal({ isOpen, onClose }) {
         </button>
 
         <div className="text-center mb-4 sm:mb-6">
-          {/* <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">💌</div> */}
           <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-2 handwriting px-8">
             Let's Grow Together!
           </h3>
@@ -398,11 +399,10 @@ export default function ContactModal({ isOpen, onClose }) {
         {/* Success/Error Message */}
         {msg && (
           <div
-            className={`mb-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base ${
-              msg.includes("Something went wrong")
+            className={`mb-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base ${msg.includes("Something went wrong")
                 ? "bg-red-100 text-red-700"
                 : "bg-green-100 text-green-700"
-            }`}
+              }`}
           >
             {msg}
           </div>
@@ -438,9 +438,9 @@ export default function ContactModal({ isOpen, onClose }) {
           <div>
             <input
               type="tel"
-              name="phone"
+              name="phoneNo"
               placeholder="Phone"
-              value={formData.phone}
+              value={formData.phoneNo}
               onChange={handleInputChange}
               disabled={loading}
               className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-[#ADD8E6] rounded-xl sm:rounded-2xl focus:outline-none focus:ring-1 focus:ring-[#ADD8E6] transition-all disabled:opacity-50"
