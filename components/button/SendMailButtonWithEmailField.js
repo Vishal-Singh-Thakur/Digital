@@ -27,34 +27,34 @@
 import React from "react";
 import Ripples from "react-ripples";
 
-function SendMailButtonWithEmailField({ loading, setLoading }) {
+function SendMailButtonWithEmailField({ loading }) {
   return (
     <div className="w-full">
       <div className="mt-2">
-        {loading ? (
-          <Ripples className="w-full">
-            <button
-              type="submit"
-              className="w-full bg-[#0885A6] text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg transition-all disabled:opacity-70"
-              disabled
-            >
-              <div className="loader inline-block"></div>
-              Sending...
-            </button>
-          </Ripples>
-        ) : (
-          <Ripples className="w-full">
-            <button
-              type="submit"
-              className="w-full bg-[#0885A6] hover:bg-[#800000] text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg transition-all duration-300 active:scale-95"
-            >
-              Let's Do This!
-            </button>
-          </Ripples>
-        )}
+        <Ripples className="w-full">
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg transition-all duration-300 active:scale-95 ${
+              loading
+                ? "bg-[#0885A6] text-white opacity-70 cursor-not-allowed"
+                : "bg-[#0885A6] hover:bg-[#800000] text-white"
+            }`}
+          >
+            {loading ? (
+              <>
+                <span className="loader inline-block mr-2"></span>
+                Sending...
+              </>
+            ) : (
+              "Let's Do This!"
+            )}
+          </button>
+        </Ripples>
       </div>
     </div>
   );
 }
 
 export default SendMailButtonWithEmailField;
+

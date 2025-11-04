@@ -11,7 +11,7 @@ export default async (req, res) => {
   const { name, email, phoneNo, companyName, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.zoho.com",
+    host: "smtp.gmail.com",
     port: 465,
     secure: true,
     auth: {
@@ -26,10 +26,10 @@ export default async (req, res) => {
         from: "Digitalsbydee<digitalsbydeeksha@gmail.com>",
         to: getRecipientList(phoneNo),
         cc: "",
-        bcc: `vishal@headsupcorporation.com`,
-        subject: `Received a mail from contact  Page`,
+        // bcc: `singhvishal7688@gmail.com`,
+        subject: `Received a mail from contact Page`,
         html: `
-        <h1>Message Received From promo ads Headsup Corporation page</h1>
+        <h1>Message Received From contact Page</h1>
         <label>Name : ${name} </label><br><br>
         <label>Email : ${email} </label><br><br>
         <label>Contact : ${phoneNo}</label><br><br>
