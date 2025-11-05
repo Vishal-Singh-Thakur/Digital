@@ -391,10 +391,13 @@ export default function ContactModal({ isOpen, onClose }) {
         </button>
 
         <div className="text-center mb-4 sm:mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-2 handwriting px-8">
+          <h3 className="text-md sm:text-2xl font-bold gradient-text mb-2 handwriting px-8">
             Let's Grow Together!
           </h3>
         </div>
+
+
+
 
         {/* Success/Error Message */}
         {msg && (
