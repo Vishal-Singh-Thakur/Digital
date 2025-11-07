@@ -1,8 +1,10 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import ContactModal from "./ContactModal";
 
 function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -48,12 +50,14 @@ function HeroSection() {
             className="flex flex-col items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6"
           >
             <button
-              onClick={() => scrollToSection("contact-us")}
+              onClick={() => setIsModalOpen(true)}
               className="bg-[#0885A6] hover:bg-[#800000] text-white px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 lg:px-12 lg:py-5 xl:px-14 xl:py-6 rounded-lg sm:rounded-xl text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold flex items-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Get Started
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
             </button>
+            {/* Contact Modal */}
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
             <div
               className="flex flex-col items-center gap-1 sm:gap-2 text-white hover:text-[#0885A6] cursor-pointer transition-colors duration-300"
