@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 const getRecipientList = (phoneNo) => {
   const isTest = phoneNo === "0123456789";
   if (isTest) {
-    return "singhvishal7688@gmail.com, digitalsbydeeksha@gmail.com";
+    return "digitalsbydeeksha@gmail.com";
   }
   return "digitalsbydeeksha@gmail.com";
 };
@@ -26,7 +26,7 @@ export default async (req, res) => {
         from: "Digitalsbydee<digitalsbydeeksha@gmail.com>",
         to: getRecipientList(phoneNo),
         cc: "",
-        // bcc: `singhvishal7688@gmail.com`,
+        // bcc: ``,
         subject: `Received a mail from contact Page`,
         html: `
         <h1>Message Received From contact Page</h1>

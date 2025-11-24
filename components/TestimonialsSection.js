@@ -19,7 +19,7 @@ function TestimonialsSection() {
       text: "Finally, a team that gets it! Creative content and results-driven ads equals magic.",
     },
     {
-      name: "Anshu K.",
+      name: "Ravi Gupta",
       role: "Jewellery brand",
       text: "Before Dee’s team stepped in, our Meta ads weren’t delivering. Within the first month, we started seeing consistent website traffic and quality leads. The targeting and creatives were spot on!",
     },

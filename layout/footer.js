@@ -110,6 +110,18 @@ export default function Footer({ scrollToSection }) {
               <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
                 PPC Advertising
               </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                Website Design & Development
+              </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                Influencer & Celebrity Tie-ups
+              </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                Product Photography & Styling
+              </li>
+              <li className="hover:text-[#0885A6] transition-colors duration-300 cursor-pointer">
+                Brand Films & Campaign Shoots
+              </li>
             </ul>
           </div>
 
