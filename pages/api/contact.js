@@ -26,8 +26,8 @@ export default async (req, res) => {
         from: "Digitalsbydee<digitalsbydeeksha@gmail.com>",
         to: getRecipientList(phoneNo),
         cc: "",
-        // bcc: ``,
-        subject: `Received a mail from contact Page`,
+        bcc: `vishal@headsupcorporation.com`,
+        subject: `Received a mail from contact  Page`,
         html: `
         <h1>Message Received From contact Page</h1>
         <label>Name : ${name} </label><br><br>
