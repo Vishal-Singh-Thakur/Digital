@@ -18,7 +18,7 @@ function HeroSection() {
       className="min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24 lg:pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden"
     >
       <div
-        className="absolute inset-0 bg-[url('/home1.png')] bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-[url('/IMG_7247.JPG')] bg-cover bg-center bg-no-repeat opacity-20"
         style={{ backgroundAttachment: "fixed" }}
       ></div>
 
