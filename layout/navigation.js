@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, TextAlignEnd } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   // Scroll to section smoothly
   // const scrollToSection = (id) => {
@@ -15,15 +17,32 @@ function Navigation() {
   //   }
   // };
 
+  //   const scrollToSection = (id) => {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     setIsMenuOpen(false);
+  //     setTimeout(() => {
+  //       section.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     }, 300);
+  //   }
+  // };
+
   const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
+    if (!id) return;
+
     setIsMenuOpen(false);
-    setTimeout(() => {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 300);
-  }
-};
+    if (window.location.pathname === "/") {
+      const section = document.getElementById(id);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 300);
+      }
+    }
+    else {
+      router.push(`/#${id}`);
+    }
+  };
 
   return (
     <div className="bg-white text-gray-900">

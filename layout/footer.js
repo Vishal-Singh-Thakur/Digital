@@ -10,8 +10,23 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function Footer({ scrollToSection }) {
+export default function Footer() {
+  const router = useRouter();
+  const handleScroll = (id) => {
+    if (!id) return;
+    if (window.location.pathname === "/") {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    else {
+      router.push(`/#${id}`);
+    }
+  };
   const quickLinks = [
     { name: "Home", id: "home" },
     { name: "About Us", id: "about-us" },
@@ -83,7 +98,8 @@ export default function Footer({ scrollToSection }) {
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
-                    onClick={() => scrollToSection(link.id)}
+                    // onClick={() => scrollToSection(link.id)}
+                    onClick={() => handleScroll(link.id)}
                     className="text-gray-400 hover:text-[#0885A6] transition-colors duration-300 flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-[#0885A6] mr-0 group-hover:mr-2 transition-all duration-300"></span>
@@ -163,13 +179,16 @@ export default function Footer({ scrollToSection }) {
               reserved.
             </p>
             <div className="flex items-center gap-6 text-gray-400 text-sm">
-              <button className="hover:text-[#0885A6] transition-colors duration-300">
+              {/* <button className="hover:text-[#0885A6] transition-colors duration-300">
                 Privacy Policy
               </button>
-              <span className="text-gray-600">|</span>
-              <button className="hover:text-[#0885A6] transition-colors duration-300">
-                Terms of Service
-              </button>
+              <span className="text-gray-600">|</span> */}
+              <Link
+                href="/privacy-policy"
+                className="hover:text-[#0885A6] transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
